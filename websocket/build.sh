@@ -1,0 +1,1 @@
+arm-none-linux-gnueabi-gcc test/test-server.c -I/home/colin/sdk/vmf_client_R0-13/include/ -I/home/colin/sdk/libwebsockets/include/ -I/home/colin/sdk/osal/include/ -L/home/colin/sdk/vmf_client/lib -lvmf_client -L/home/colin/sdk/libwebsockets/lib -lwebsockets -lrt -lpthread -o libwebsockets-test-server

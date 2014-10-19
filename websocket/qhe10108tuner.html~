@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>maintuner</title>
+<style type="text/css">
+<!--
+body {
+	background-image: url(websrc/Background_Tuner.png);
+	background-repeat: no-repeat;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+#Layer1 {
+	position:absolute;
+	width:69px;
+	height:72px;
+	z-index:1;
+	top: 393px;
+	left: 479px;
+}
+#Layer2 {
+	position:absolute;
+	width:97px;
+	height:46px;
+	z-index:2;
+	left: 48px;
+	top: 267px;
+}
+#Layer3 {
+	position:absolute;
+	width:108px;
+	height:36px;
+	z-index:3;
+	left: 245px;
+	top: 267px;
+}
+#Layer4 {
+	position:absolute;
+	width:117px;
+	height:41px;
+	z-index:4;
+	left: 438px;
+	top: 267px;
+}
+#Layer5 {
+	position:absolute;
+	width:110px;
+	height:43px;
+	z-index:5;
+	left: 635px;
+	top: 267px;
+}
+#Layer6 {
+	position:absolute;
+	width:27px;
+	height:37px;
+	z-index:6;
+	left: 150px;
+	top: 175px;
+}
+#Layer7 {
+	position:absolute;
+	width:41px;
+	height:39px;
+	z-index:7;
+	left: 346px;
+	top: 175px;
+}
+#Layer8 {
+	position:absolute;
+	width:38px;
+	height:39px;
+	z-index:8;
+	left: 542px;
+	top: 175px;
+}
+#Layer9 {
+	position:absolute;
+	width:38px;
+	height:32px;
+	z-index:9;
+	left: 739px;
+	top: 175px;
+}
+-->
+</style>
+<script type="text/JavaScript">
+<!--
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function smaller(){
+ var i;
+  for (i=0; i<(arguments.length); i+=1) 
+  {
+ 	 document.getElementById(arguments[i]).style.fontSize=25;
+	  document.getElementById(arguments[i]).style.marginBottom=12;
+  }
+}
+function bigger(id){
+var i;
+  for (i=0; i<(arguments.length); i+=1) 
+  {
+ 	 document.getElementById(arguments[i]).style.fontSize=35;
+	 	  document.getElementById(arguments[i]).style.marginTop=5;
+
+  }
+}
+function normal(id){
+var i;
+  for (i=0; i<(arguments.length); i+=1) 
+  {
+ 	 document.getElementById(arguments[i]).style.fontSize=30;
+	 document.getElementById(arguments[i]).style.margin=0;
+  }
+}
+function isodatetime() {
+var today = new Date();
+var year  = today.getYear();
+if (year < 2000)
+year = year + 1900;
+var month = today.getMonth() + 1;
+var day  = today.getDate();
+var hour = today.getHours();
+var hourUTC = today.getUTCHours();
+var diff = hour - hourUTC;
+var hourdifference = Math.abs(diff);
+var minute = today.getMinutes();
+var minuteUTC = today.getUTCMinutes();
+var minutedifference;
+var second = today.getSeconds();
+var timezone;
+if (minute != minuteUTC && minuteUTC < 30 && diff < 0) { hourdifference--; }
+if (minute != minuteUTC && minuteUTC > 30 && diff > 0) { hourdifference--; }
+if (minute != minuteUTC) {
+minutedifference = ":30";
+}
+else {
+minutedifference = ":00";
+}
+if (hourdifference < 10) {
+timezone = "0" + hourdifference + minutedifference;
+}
+else {
+timezone = "" + hourdifference + minutedifference;
+}
+if (diff < 0) {
+timezone = "-" + timezone;
+}
+else {
+timezone = "+" + timezone;
+}
+if (month <= 9) month = "0" + month;
+if (day <= 9) day = "0" + day;
+if (hour <= 9) hour = "0" + hour;
+if (minute <= 9) minute = "0" + minute;
+if (second <= 9) second = "0" + second;
+time = hour + ":" + minute;
+document.getElementById("isoclock").value = time;
+window.setTimeout("isodatetime();", 500);
+}
+//-->
+</script>
+</head>
+
+<body onload="isodatetime();MM_preloadImages('websrc/Tuner_Band/Tuner_Band-Glow.png','websrc/Station_List/Station_List-Glow.png','websrc/Tune/Tune-Glow.png','websrc/Previous_Tuner/Previous_Tuner-Glow.png','websrc/Next_Tuner/Next_Tuner-Glow.png','websrc/Setup/Setup-Glow.png','websrc/Type070/07_UL.png','websrc/Type070/10_UL.png')">
+<table width="804" height="486" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr>
+    <td width="117" height="42">&nbsp;</td>
+    <td width="188">&nbsp;</td>
+    <td width="201"><input name="isoclock" id="isoclock" disabled="disabled"  value="12345" type="text" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 25px; background-color:transparent;text-align:center; width:200px; height:42px;line-height:42px"/></td>
+    <td width="163">&nbsp;</td>
+    <td colspan="3" border="0"><input name="temp"  value="12345" disabled="disabled" type="text" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 25px; background-color:transparent;text-align:right; width:116px; height:42px;line-height:42px" /></td>
+  </tr>
+  <tr>
+    <td height="32" colspan="6">&nbsp;</td>
+  
+  </tr>
+  
+  <tr>
+    <td height="82" background="websrc/02_UC2_back.png" style="background-repeat:no-repeat; background-position:center"><div align="center"><img src="websrc/Previous_Tuner/Previous_Tuner-06.png" name="seekdown" width="116" height="80" id="seekdown" onclick="MM_swapImage('seekdown','','websrc/Previous_Tuner/Previous_Tuner-Glow.png',1)" onmousemove="MM_swapImgRestore()"/></div></td>
+    <td>&nbsp;</td>
+    <td><input name="station" value="fm 1234" disabled="disabled" type="text" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 35px; background-color:transparent;text-align:center; width:200px; height:80px; line-height:80px" readonly="readonly"/></td>
+    <td colspan="2">&nbsp;</td>
+    <td colspan="2" background="websrc/06_UC2_back.png" style="background-repeat:no-repeat; background-position:center"><div align="center"><img src="websrc/Next_Tuner/Next_Tuner-06.png" name="seekup" width="116" height="80" align="right" id="seekup" onclick="MM_swapImage('seekup','','websrc/Next_Tuner/Next_Tuner-Glow.png',1)" onmousemove="MM_swapImgRestore()" /></div></td>
+  </tr>
+  <tr>
+    <td height="118" colspan="7"><div align="center"><img src="websrc/Type070/06_UL.png" name="tuner1" width="196" height="185" id="tuner1" onclick="MM_swapImage('tuner1','','websrc/Type070/07_UL.png',1);smaller('no1','band1')" ondblclick="MM_swapImage('tuner1','','websrc/Type070/10_UL.png',1);bigger('no1','band1')" onmouseout="MM_swapImgRestore();normal('no1','band1')" /><img src="websrc/Type070/06_UL.png" name="tuner2" width="196" height="185" id="tuner2" onclick="MM_swapImage('tuner2','','websrc/Type070/07_UL.png',1);smaller('no2','band2')" ondblclick="MM_swapImage('tuner2','','websrc/Type070/10_UL.png',1);bigger('no2','band2')" onmouseout="MM_swapImgRestore();normal('no2','band2')" /><img src="websrc/Type070/06_UL.png" name="tuner3" width="196" height="185" id="tuner3" onclick="MM_swapImage('tuner3','','websrc/Type070/07_UL.png',1);smaller('no3','band3')" ondblclick="MM_swapImage('tuner3','','websrc/Type070/10_UL.png',1);bigger('no3','band3')" onmouseout="MM_swapImgRestore();normal('no3','band3')" /><img src="websrc/Type070/06_UL.png" name="tuner4" width="196" height="185" id="tuner4" onclick="MM_swapImage('tuner4','','websrc/Type070/07_UL.png',1);smaller('no4','band4')" ondblclick="MM_swapImage('tuner4','','websrc/Type070/10_UL.png',1);bigger('no4','band4')" onmouseout="MM_swapImgRestore();normal('no4','band4')" /></div></td>
+  </tr>
+  <tr>
+    <td height="39">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="5">&nbsp;</td>
+    <td width="116">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="100" colspan="6" valign="top"><img src="websrc/Tuner_Band/Tuner_Band-06.png" name="Image1" width="116" height="96" border="1" id="Image1" onclick="MM_swapImage('Image1','','websrc/Tuner_Band/Tuner_Band-Glow.png',1)" onmouseout="MM_swapImgRestore()" /><img src="websrc/Divider_Setup_090.png" width="4" height="74" vspace="6" /><img src="websrc/Station_List/Station_List-06.png" name="list" width="116" height="96" id="list" onclick="MM_swapImage('list','','websrc/Station_List/Station_List-Glow.png',1)" onmouseout="MM_swapImgRestore()" /><img src="websrc/Divider_Setup_090.png" width="4" height="74" vspace="6" /><img src="websrc/Tune/Tune-06.png" name="tune" width="116" height="96" id="tune" onclick="MM_swapImage('tune','','websrc/Tune/Tune-Glow.png',1)" onmouseout="MM_swapImgRestore()" /><img src="websrc/Divider_Setup_090.png" width="4" height="74" vspace="6" /><img src="websrc/Previous_Tuner/Previous_Tuner-06.png" name="vdown" width="116" height="80" vspace="8" id="vdown" onclick="MM_swapImage('vdown','','websrc/Previous_Tuner/Previous_Tuner-Glow.png',1)" onmousemove="MM_swapImgRestore()" /><img src="websrc/02_UC2_back.png" width="88" height="88" vspace="3" /><img src="websrc/Next_Tuner/Next_Tuner-06.png" name="vup" width="116" height="80" vspace="8" id="vup" onclick="MM_swapImage('vup','','websrc/Next_Tuner/Next_Tuner-Glow.png',1)" onmousemove="MM_swapImgRestore()" /><img src="websrc/Divider_Setup_090.png" width="4" height="74" vspace="6" /><img src="websrc/Setup/Setup-06.png" name="setup" width="116" height="96" id="setup" onclick="MM_swapImage('setup','','websrc/Setup/Setup-Glow.png',1)" onmouseout="MM_swapImgRestore()"  />
+      <div id="Layer2">
+        <input name="band1data" id="band1" value="875" type="text" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 30px; background-color:transparent;text-align:center; width:120px; height:45px; line-height:45px" disabled="disabled" />
+      </div>      <div id="Layer1">
+        <input name="vol" type="text" disabled="disabled" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 25px; background-color:transparent;text-align:center; width:80px; height:80px; line-height:80px" value="V15" align="middle" />
+    </div></td>
+  </tr>
+</table>
+<div align="center"></div>
+<div id="Layer3">
+<input name="band2data" id="band2" type="text" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 25px; background-color:transparent;text-align:center; width:120px; height:45px" disabled="disabled"/></div>
+<div id="Layer4">
+<input name="band3data" id="band3" type="text" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 25px; background-color:transparent;text-align:center; width:120px; height:45px" disabled="disabled" /></div>
+<div id="Layer5">
+  <input name="band4data" id="band4"type="text" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 25px; background-color:transparent;text-align:center; width:120px; height:45px" disabled="disabled"/>
+</div>
+<div id="Layer6">
+<input name="1" id="no1" type="text" value="1" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 30px; background-color:transparent;text-align:center; width:40px; height:40px" disabled="disabled"/></div>
+<div id="Layer7">
+<input name="2" id="no2" type="text" value="2" style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 30px; background-color:transparent;text-align:center; width:40px; height:40px" disabled="disabled" /></div>
+<div id="Layer8">
+<input name="3" id="no3" type="text" value="3"  style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 30px; background-color:transparent;text-align:center; width:40px; height:40px" disabled="disabled" /></div>
+<div id="Layer9">
+<input name="4" id="no4" type="text" value="4"  style=" border:none; font-family: Arial; color: #f0f0f0;font-size: 30px; background-color:transparent;text-align:center; width:40px; height:40px" disabled="disabled" /></div>
+</body>
+</html>

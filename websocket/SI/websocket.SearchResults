@@ -1,0 +1,32 @@
+---- test Matches (33 in 7 files) ----
+intEvtDefs.h (z:\home\colin\sdk\vmf_client_r0-13\include):#define IPCL_TEST_VIP_OUT                             188  /* ipcl test msg VIP -> HOST */
+Test-client.c (z:\home\colin\myprogram\websocket\test): * libwebsockets-test-client - libwebsockets test implementation
+Test-client.c (z:\home\colin\myprogram\websocket\test): *				session also using the test server)
+Test-client.c (z:\home\colin\myprogram\websocket\test):		/* useful to test single connection stability */
+Test-client.c (z:\home\colin\myprogram\websocket\test):	fprintf(stderr, "libwebsockets test client\n"
+Test-client.c (z:\home\colin\myprogram\websocket\test):	fprintf(stderr, "Usage: libwebsockets-test-client "
+Test-echo.c (z:\home\colin\myprogram\websocket\test): * libwebsockets-test-echo - libwebsockets echo test implementation
+Test-echo.c (z:\home\colin\myprogram\websocket\test):#define LOCAL_RESOURCE_PATH INSTALL_DATADIR"/libwebsockets-test-server"
+Test-echo.c (z:\home\colin\myprogram\websocket\test):		pss->len = sprintf((char *)&pss->buf[LWS_SEND_BUFFER_PRE_PADDING], "hello from libwebsockets-test-echo client pid %d index %d\n", getpid(), pss->index++);
+Test-echo.c (z:\home\colin\myprogram\websocket\test):			fprintf(stderr, "Usage: libwebsockets-test-echo "
+Test-echo.c (z:\home\colin\myprogram\websocket\test):	lwsl_notice("libwebsockets echo test - "
+Test-echo.c (z:\home\colin\myprogram\websocket\test):		info.ssl_cert_filepath = LOCAL_RESOURCE_PATH"/libwebsockets-test-server.pem";
+Test-echo.c (z:\home\colin\myprogram\websocket\test):		info.ssl_private_key_filepath = LOCAL_RESOURCE_PATH"/libwebsockets-test-server.key.pem";
+Test-echo.c (z:\home\colin\myprogram\websocket\test):	lwsl_notice("libwebsockets-test-echo exited cleanly\n");
+Test-fraggle.c (z:\home\colin\myprogram\websocket\test): * libwebsockets-test-fraggle - random fragmentation test
+Test-fraggle.c (z:\home\colin\myprogram\websocket\test):#define LOCAL_RESOURCE_PATH INSTALL_DATADIR"/libwebsockets-test-server"
+Test-fraggle.c (z:\home\colin\myprogram\websocket\test):	fprintf(stderr, "libwebsockets test fraggle\n"
+Test-fraggle.c (z:\home\colin\myprogram\websocket\test):			fprintf(stderr, "Usage: libwebsockets-test-fraggle "
+Test-fraggle.c (z:\home\colin\myprogram\websocket\test):		info.ssl_cert_filepath = LOCAL_RESOURCE_PATH"/libwebsockets-test-server.pem";
+Test-fraggle.c (z:\home\colin\myprogram\websocket\test):		info.ssl_private_key_filepath = LOCAL_RESOURCE_PATH"/libwebsockets-test-server.key.pem";
+Test-ping.c (z:\home\colin\myprogram\websocket\test): * libwebsockets-test-ping - libwebsockets floodping
+Test-ping.c (z:\home\colin\myprogram\websocket\test):	fprintf(stderr, "Usage: libwebsockets-test-ping "
+Test-server.c (z:\home\colin\myprogram\websocket\test): * libwebsockets-test-server - libwebsockets test implementation
+Test-server.c (z:\home\colin\myprogram\websocket\test)://#define LOCAL_RESOURCE_PATH "./libwebsockets-test-server"
+Test-server.c (z:\home\colin\myprogram\websocket\test):			fprintf(stderr, "Usage: test-server "
+Test-server.c (z:\home\colin\myprogram\websocket\test):	lwsl_notice("libwebsockets test server - "
+Test-server.c (z:\home\colin\myprogram\websocket\test):		sprintf(cert_path, "%s/libwebsockets-test-server.pem",
+Test-server.c (z:\home\colin\myprogram\websocket\test):		sprintf(key_path, "%s/libwebsockets-test-server.key.pem",
+Test-server.c (z:\home\colin\myprogram\websocket\test):	lwsl_notice("libwebsockets-test-server exited cleanly\n");
+Test.html (z:\home\colin\myprogram\websocket\test):This is the testcase to test the vmf communication through websockets.
+Test.html (z:\home\colin\myprogram\websocket\test):Click <a href="/leaf.jpg" target="_blank">Here</a> to have the test server send a big picture by http.

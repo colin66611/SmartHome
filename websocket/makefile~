@@ -1,0 +1,36 @@
+CC=/home/arm-2010q1/bin/arm-none-linux-gnueabi-gcc
+#CC=/home/zero/sdk/gcc-4.6.2-glibc-2.13-linaro-multilib-2011.12/fsl-linaro-toolchain/bin/arm-none-linux-gnueabi-gcc
+
+ROOT=/home/colin/myprogram/R013/RTC/
+
+
+INC_OSAL	=$(ROOT)ai-services-r013/arm11/osal_ap/03_code/public/
+INC_VMF		=$(ROOT)ai-vmf-r013/vmf_devel/R013/include/
+INC_GENERIC	=$(ROOT)ai-int-r013/ARM11/build/include/
+INC_WEBSOCKET	=./libwebsockets/include/
+
+LIB_VMF		=$(ROOT)ai-vmf-r013/vmf_devel/R013/libs/
+LIB_OSAL	=$(ROOT)ai-int-r013/ARM11/build/output/services/bin
+LIB_WEBSOCKET	=./libwebsockets/lib/
+
+DEP_VMF		=vmf_client
+DEP_OSAL	=OSAL
+DEP_WEBSOCKET	=websockets
+
+
+
+INCS		= -I$(INC_GENERIC) -I$(INC_OSAL) -I$(INC_VMF) -I$(INC_WEBSOCKET)
+
+LIB_DEBUG_FILE	= -L$(LIB_VMF) -L$(LIB_OSAL) -L$(LIB_WEBSOCKET) -lpthread -lrt -l$(DEP_VMF) -l$(DEP_OSAL) -l$(DEP_WEBSOCKET)
+
+CFLAGS=-Wall
+SOURCE=test/test-server.c
+
+OUTNAME=r013_webserver
+
+DEBUG:
+	$(CC) $(CFLAGS) $(INCS) -o $(OUTNAME) $(SOURCE) $(LIB_DEBUG_FILE)
+
+clean:
+	@rm *.o $(OUTNAME)  -rf
+
